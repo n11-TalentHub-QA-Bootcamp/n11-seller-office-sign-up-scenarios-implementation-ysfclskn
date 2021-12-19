@@ -4,14 +4,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
-import net.serenitybdd.screenplay.waits.Wait;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.serenitybdd.screenplay.waits.WaitUntilExpectation;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import starter.n11so.user_interface.n11soLoginPageElements;
 import starter.n11so.user_interface.n11soSignupPageElements;
-
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
@@ -37,27 +33,33 @@ public class SignUpAsPerson implements Task {
                 //Type Password
                 Click.on(n11soSignupPageElements.PASSWORD_FIELD),
                 WaitUntil.the(n11soSignupPageElements.LOADING_GIF,isNotCurrentlyVisible()).forNoMoreThan(2).seconds(),
+                Click.on(n11soSignupPageElements.PASSWORD_FIELD),
                 SendKeys.of(this.password_text).into(n11soSignupPageElements.PASSWORD_FIELD),
 
 
                 //Retype Password
                 Click.on(n11soSignupPageElements.RE_PASSWORD_FIELD),
                 WaitUntil.the(n11soSignupPageElements.LOADING_GIF,isNotCurrentlyVisible()).forNoMoreThan(2).seconds(),
+                Click.on(n11soSignupPageElements.RE_PASSWORD_FIELD),
                 SendKeys.of(this.password_text).into(n11soSignupPageElements.RE_PASSWORD_FIELD),
 
                 //Type e-mail
                 Click.on(n11soSignupPageElements.EMAIL_FIELD),
                 WaitUntil.the(n11soSignupPageElements.LOADING_GIF,isNotCurrentlyVisible()).forNoMoreThan(2).seconds(),
+                Click.on(n11soSignupPageElements.EMAIL_FIELD),
                 SendKeys.of(this.email_text).into(n11soSignupPageElements.EMAIL_FIELD),
 
                 //Retype e-mail
+
                 Click.on(n11soSignupPageElements.RE_EMAIL_FIELD),
                 WaitUntil.the(n11soSignupPageElements.LOADING_GIF,isNotCurrentlyVisible()).forNoMoreThan(2).seconds(),
+                Click.on(n11soSignupPageElements.RE_EMAIL_FIELD),
                 SendKeys.of(this.email_text).into(n11soSignupPageElements.RE_EMAIL_FIELD),
 
                 //Type store name
                 Click.on(n11soSignupPageElements.STORE_NAME_FIELD),
                 WaitUntil.the(n11soSignupPageElements.LOADING_GIF,isNotCurrentlyVisible()).forNoMoreThan(2).seconds(),
+                Click.on(n11soSignupPageElements.STORE_NAME_FIELD),
                 SendKeys.of(this.storename_text).into(n11soSignupPageElements.STORE_NAME_FIELD),
 
                 //Select "Şahıs" user type
@@ -87,6 +89,7 @@ public class SignUpAsPerson implements Task {
         return instrumented(SignUpAsPerson.class
                 ,username_text,email_text,password_text,storename_text);
     }
+
 
 
 

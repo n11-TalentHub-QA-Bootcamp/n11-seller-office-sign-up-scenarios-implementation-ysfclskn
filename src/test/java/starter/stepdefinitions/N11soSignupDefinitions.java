@@ -26,7 +26,11 @@ public class N11soSignupDefinitions {
     }
     @When("user signed in selleroffice with valid credentials")
     public void userSignedInSellerofficeWithValidCredentials() {
-        actor.attemptsTo(SignUpAsPerson.signupThePage("ysfclskn","ysfclskn94@gmail.com","yusuf","YSFmystore"));
+        actor.attemptsTo(SignUpAsPerson.signupThePage(
+                "ysfclskn",
+                "ysfclskn94@gmail.com",
+                "yusuf",
+                "YSFmystore"));
     }
 
 
